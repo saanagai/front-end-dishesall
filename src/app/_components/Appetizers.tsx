@@ -4,7 +4,8 @@ export default function () {
       name: "Brie Crostini Appertizer",
       img: "res.clod",
       price: "$12.99",
-      description: "Fluffy pancakes stacked with fruits, cream, syrup, and powdere sugar.",
+      description:
+        "Fluffy pancakes stacked with fruits, cream, syrup, and powdere sugar.",
     },
     {
       name: "Budaatai huurga",
