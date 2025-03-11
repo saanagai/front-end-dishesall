@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React, { useState } from "react";
 
 export const CloudinaryUpload = () => {
@@ -46,9 +47,20 @@ export const CloudinaryUpload = () => {
         onClick={handleUpload}
         className="bg-green-500 px-4 py-2 rounded-lg"
       >
-        {" "}
         Upload
       </Button>
+      {!image && (
+        <div>
+          <Image
+            width={500}
+            height={500}
+            alt="uploaded"
+            src={
+              "https://res.cloudinary.com/dwvh6k0kb/image/upload/v1740111684/Food_Image_iuuebm.png"
+            }
+          />
+        </div>
+      )}
     </div>
   );
 };
