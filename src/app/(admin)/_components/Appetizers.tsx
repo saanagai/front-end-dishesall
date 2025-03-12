@@ -14,25 +14,26 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { CloudinaryUpload } from "./CloudinaryUpload";
+import { CloudinaryUpload } from "../../_components/CloudinaryUpload";
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
+  foodname: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
 });
 
 export default function page() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      foodname: "",
     },
   });
 
@@ -41,6 +42,13 @@ export default function page() {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
+  // export function Appetizers() {
+  //   const form = useForm<z.infer<typeof formSchema>>({
+  //     resolver: zodResolver(formSchema),
+  //     defaultValues: {
+  //       foodname: "",
+  //     },
+  //   });
 
   return (
     <div>
@@ -66,7 +74,7 @@ export default function page() {
               >
                 <FormField
                   control={form.control}
-                  name="username"
+                  name="foodname"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Food name</FormLabel>
@@ -87,7 +95,7 @@ export default function page() {
               >
                 <FormField
                   control={form.control}
-                  name="username"
+                  name="foodname"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Food price</FormLabel>
@@ -106,7 +114,7 @@ export default function page() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                 control={form.control}
-                name="username"
+                name="foodname"
                 render={({ field }) => (
                   <FormItem>
                     <Textarea placeholder="List ingredients..." />
