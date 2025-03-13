@@ -1,5 +1,5 @@
 import Appetizers from "./(admin)/_components/Appetizers";
-import CategoryFoods from "./(admin)/_components/CategoryFoods";
+import CategoryFoods from "./_components/CategoryFoods";
 
 import Category from "./(admin)/_components/DishesCategory";
 

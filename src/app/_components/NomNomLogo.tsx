@@ -2,10 +2,11 @@ export const NomNomLogo = () => {
   return (
     <svg
       width="36"
-      height="30"
+      height="40"
       viewBox="0 0 36 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="mt-2"
     >
       <path
         id="Screenshot 2024-12-17 at 18.02.18 1 (Traced)"
