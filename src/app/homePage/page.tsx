@@ -1,4 +1,3 @@
-import CategoryFoods from "../_components/CategoryFoods";
 import Footer from "./_components/Footer";
 import { Header } from "./_components/Header";
 
