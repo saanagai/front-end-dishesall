@@ -22,6 +22,13 @@ import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import { FoodCategoryType } from "@/app/_components/_util/types";
 
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu";
+
 const formSchema = z.object({
   categoryname: z.string().min(2, {
     message: "Category name must be at least 2 characters.",
@@ -77,15 +84,26 @@ export default function Category() {
 
   return (
     <div>
+      <ContextMenu>
+        <ContextMenuTrigger>
+          <div></div>Right click
+        </ContextMenuTrigger>
+        <ContextMenuContent>
+          <ContextMenuItem>
+            Profile
+            <DialogTrigger>
+              <div className=" bg-slate-200 w-96 h-20 rounded-lg flex  gap-4 py-5 mt-5 px-5">
+                <h2 className="font-semibold text-[16px]  ">Dishes Category</h2>
+                <div className="rounded-full size-5 bg-red-500 flex justify-center items-center text-white  ">
+                  +
+                </div>
+              </div>
+            </DialogTrigger>
+          </ContextMenuItem>
+        </ContextMenuContent>
+      </ContextMenu>
+
       <Dialog>
-        <DialogTrigger>
-          <div className=" bg-slate-200 w-96 h-20 rounded-lg flex  gap-4 py-5 mt-5 px-5">
-            <h2 className="font-semibold text-[16px]  ">Dishes Category</h2>
-            <div className="rounded-full size-5 bg-red-500 flex justify-center items-center text-white  ">
-              +
-            </div>
-          </div>
-        </DialogTrigger>
         <DialogContent>
           <DialogTitle> Add new category</DialogTitle>
 
