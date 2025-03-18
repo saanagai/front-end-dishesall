@@ -6,19 +6,20 @@ import React, { useState } from "react";
 export const CloudinaryUpload = () => {
   const [file, setFile] = useState("");
   const [image, setImage] = useState("");
-  const PRESENT_NAME = "food-delivery-app";
-  const CLOUDINARY_NAME = "dwvh6k0kb";
-
+  const PRESENT_NAME = process.env.PRESENT_NAME!;
+  const CLOUDINARY_NAME = process.env.CLOUDINARY_NAME!;
   const handleFile = (e: any) => {
     const file = e.target.files[0];
     if (file) {
       setFile(file);
     }
   };
+
   const handleUpload = async () => {
     if (!file) {
       alert("Please select a file");
     }
+
     const formData = new FormData();
     formData.append("file", file);
     formData.append("uploadpresent", PRESENT_NAME);

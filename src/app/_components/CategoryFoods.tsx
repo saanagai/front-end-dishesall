@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/dialog";
 import { Pencil } from "lucide-react";
 
-const CategoryFoods = ({ category }: { category: FoodCategoryType }) => {
-  console.log(category);
+const CategoryFoods = ({ name }: { name: FoodCategoryType }) => {
+  console.log(name);
   const [foods, setFoods] = useState<FoodType[]>([]);
   const getFoods = async () => {
     const data = await fetch("http://localHost:4000/food");
@@ -25,13 +25,13 @@ const CategoryFoods = ({ category }: { category: FoodCategoryType }) => {
   useEffect(() => {
     // fetch() catId
     getFoods();
-  }, [category]);
+  }, []);
   return (
     <div>
       <div>
-        <h2>{category.categoryName}</h2>
+        <h2>{name.categoryName}</h2>
         <div className="flex gap-2 flex-wrap">
-          <AddFoodDialog name={category.categoryName} />
+          <AddFoodDialog name={name.categoryName} />
           {foods.map((food, index) => (
             <div key={index}></div>
           ))}

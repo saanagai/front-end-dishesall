@@ -59,7 +59,7 @@ export default function Category() {
   }, []);
 
   const createCategory = async () => {
-    const data = await fetch("http://localhost:4000/food-category", {
+    await fetch("http://localhost:4000/food-category", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -118,8 +118,8 @@ export default function Category() {
           </Button>
         </DialogContent>
       </Dialog>
-      {categories?.map((category: FoodCategoryType) => {
-        return <div>{category.categoryName}</div>;
+      {categories?.map((category: FoodCategoryType, index: number) => {
+        return <div key={index}>{category.categoryName}</div>;
       })}
     </div>
   );

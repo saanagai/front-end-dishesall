@@ -3,7 +3,7 @@ import { NomNomLogo } from "../../_components/NomNomLogo";
 import { LayoutDashboard, Settings, TruckIcon } from "lucide-react";
 import Link from "next/link";
 
-export const Header = () => {
+export const SideBar = () => {
   return (
     <div className=" flex flex-col gap-20 w-[15%] min-h-[100vh] bg-slate-100 p-10">
       <Link href="/">
